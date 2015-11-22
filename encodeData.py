@@ -22,9 +22,9 @@ def getWords(item):
 
 # Load mappings
 filename = sys.argv[1]
-wordMap = json.loads(open(filename).read())
+wordMap = json.loads(open('data/wordMap.json').read())
 cuisineMap = json.loads(open('data/cuisineMap.json').read())
-data = json.loads(open('data/train.json').read())
+data = json.loads(open(filename).read())
 
 # Perform encoding
 numFeature = len(wordMap)
