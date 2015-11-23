@@ -32,6 +32,7 @@ numClass = len(cuisineMap)
 
 features = []
 labels = []
+ids = []
 total = len(data)
 count = 0
 for item in data:
@@ -43,9 +44,10 @@ for item in data:
 	if ('cuisine' in item):
 		labels.append(cuisineMap[item['cuisine'].lower()])	
 	count = count + 1
+	ids.append(item['id'])
 	print count, "/", total
 
 # Save data
 features = np.array(features)
 labels = np.array(labels)
-sio.savemat('encoding_output.mat', {'features': features, 'labels': labels})
+sio.savemat('encoding_output.mat', {'features': features, 'labels': labels, 'ids': ids})
