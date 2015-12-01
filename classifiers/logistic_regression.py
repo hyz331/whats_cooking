@@ -17,6 +17,9 @@ classifier = linear_model.LogisticRegression()
 classifier.fit(X, Y)
 prediction = classifier.predict(testX)
 
+# Print train accuracy
+print classifier.score(X, Y)
+
 # Save data
 testId = ids.tolist()
 predicts = prediction.tolist()
