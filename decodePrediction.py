@@ -16,8 +16,10 @@ filename = sys.argv[1]
 data = sio.loadmat(filename)
 cuisineMap = json.loads(open('data/cuisineMap.json').read())
 
-ids = data['ids'].tolist()
-predicts = data['predicts'].tolist()
+ids = np.transpose(data['ids']).tolist()
+predicts = np.transpose(data['predicts']).tolist()
+print len(predicts)
+
 
 # Construct reverse mapping
 revMap = dict()

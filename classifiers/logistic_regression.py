@@ -14,10 +14,11 @@ ids = testData['ids']
 # Fit model
 print "Training..."
 classifier = linear_model.LogisticRegression()
-classifier.fit(X, Y)
+classifier.fit(X[1:100], Y[1:100])
 prediction = classifier.predict(testX)
+print len(prediction)
 
 # Save data
-testId = np.transpose(np.array(ids))
-predicts = np.transpose(np.array(prediction))
+testId = ids.tolist()
+predicts = prediction.tolist()
 sio.savemat('../lr_prediction.mat', {'ids': ids, 'predicts': predicts})
