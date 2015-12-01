@@ -18,6 +18,6 @@ classifier.fit(X, Y)
 prediction = classifier.predict(testX)
 
 # Save data
-testId = np.array(ids)
-predicts = np.array(prediction)
+testId = np.transpose(np.array(ids))
+predicts = np.transpose(np.array(prediction))
 sio.savemat('../lr_prediction.mat', {'ids': ids, 'predicts': predicts})
