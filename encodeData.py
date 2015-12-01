@@ -50,4 +50,4 @@ for item in data:
 # Save data
 features = np.array(features)
 labels = np.array(labels)
-sio.savemat('encoding_output.mat', {'features': features, 'labels': labels, 'ids': ids})
+sio.savemat('data/train_encoded.mat', {'features': features, 'labels': labels, 'ids': ids})
