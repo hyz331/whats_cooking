@@ -14,9 +14,8 @@ ids = testData['ids']
 # Fit model
 print "Training..."
 classifier = linear_model.LogisticRegression()
-classifier.fit(X[1:100], Y[1:100])
+classifier.fit(X, Y)
 prediction = classifier.predict(testX)
-print len(prediction)
 
 # Save data
 testId = ids.tolist()

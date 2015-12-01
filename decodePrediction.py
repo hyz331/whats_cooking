@@ -18,8 +18,6 @@ cuisineMap = json.loads(open('data/cuisineMap.json').read())
 
 ids = np.transpose(data['ids']).tolist()
 predicts = np.transpose(data['predicts']).tolist()
-print len(predicts)
-
 
 # Construct reverse mapping
 revMap = dict()
